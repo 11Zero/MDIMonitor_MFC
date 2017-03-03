@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: 碗扣式满堂支架建模助手 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\ADMINI~1\AppData\Local\Temp\RSP8F5E.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/碗扣式满堂支架建模助手.pdb" /debug /machine:I386 /out:"Debug/碗扣式满堂支架建模助手.exe" /pdbtype:sept 
+".\Debug\DanYuan.obj"
+".\Debug\element.obj"
+".\Debug\excel.obj"
+".\Debug\fline.obj"
+".\Debug\msword.obj"
+".\Debug\Node.obj"
+".\Debug\PaiJu.obj"
+".\Debug\Section.obj"
+".\Debug\Set.obj"
+".\Debug\StdAfx.obj"
+".\Debug\UIThread.obj"
+".\Debug\WordOffice.obj"
+".\Debug\xSkinButton.obj"
+".\Debug\碗扣式满堂支架建模助手.obj"
+".\Debug\碗扣式满堂支架建模助手Dlg.obj"
+".\Debug\碗扣式满堂支架建模助手.res"
+]
+Creating command line "link.exe @C:\Users\ADMINI~1\AppData\Local\Temp\RSP8F5E.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+碗扣式满堂支架建模助手.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

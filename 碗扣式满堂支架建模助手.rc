@@ -1,0 +1,485 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\碗扣式满堂支架建模助手.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\碗扣式满堂支架建模助手.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 碗扣式满堂支架建模助手"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "碗扣式满堂支架建模助手 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2015",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_MY_DIALOG DIALOGEX 0, 0, 499, 385
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "碗扣式满堂支架建模助手"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "进入参数设置",IDB_Start,209,121,61,17
+    PUSHBUTTON      "使用说明",IDB_Intro,209,184,61,17
+    PUSHBUTTON      "退出",IDB_Exit,209,247,61,17
+END
+
+IDD_Set DIALOGEX 0, 0, 437, 345
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "满堂支架助手 v1.70"
+FONT 10, "宋体", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDE_ZhuJu_X1,58,48,171,12,ES_AUTOHSCROLL
+    EDITTEXT        IDE_PaiJu_Y,59,66,170,12,ES_AUTOHSCROLL
+    EDITTEXT        IDE_BuJu_Z,58,83,170,12,ES_AUTOHSCROLL
+    EDITTEXT        IDE_DingCengXuanBi,89,108,32,12,ES_AUTOHSCROLL
+    EDITTEXT        IDE_SaoDiGanGaoDu,88,125,33,12,ES_AUTOHSCROLL
+    EDITTEXT        IDE_XiaTuoChengGaoDu,90,142,33,12,ES_AUTOHSCROLL
+    EDITTEXT        IDE_GangJinHunNingTu,349,49,31,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_MoBanFangLeng,349,69,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_FuJiaGouJian,349,94,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_RenChaiJi,349,118,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_JiaoZhuZhenDao,349,142,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_FengHeZai,349,168,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_DiYiCiYuYa,91,200,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_DiErCiYuYa,91,224,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_DiSanCiYuYa,91,247,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_DiYiCiJiaoZhu,91,271,56,15,ES_AUTOHSCROLL
+    EDITTEXT        IDE_DiErCiJiaoZhu,91,295,56,15,ES_AUTOHSCROLL
+    CONTROL         "一级方案",IDC_RADIO_G1,"Button",BS_AUTORADIOBUTTON,212,223,46,10
+    CONTROL         "二级方案",IDC_RADIO_G2,"Button",BS_AUTORADIOBUTTON,277,223,46,10
+    CONTROL         "三级方案",IDC_RADIO_G3,"Button",BS_AUTORADIOBUTTON,344,223,46,10
+    PUSHBUTTON      "导入位移数据",IDC_BUTTON_INPUTEXCEL2,201,244,57,14
+    PUSHBUTTON      "导入应力数据",IDC_BUTTON_INPUTEXCEL,269,244,57,14
+    PUSHBUTTON      "导出监测方案",IDC_BUTTON_OUTPUTWORD,337,244,57,14
+    EDITTEXT        IDE_BuJuZ,65,0,20,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_BuJu_Z,92,0,18,49,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "生成MCT文件",IDB_Output,21,169,70,13
+    PUSHBUTTON      "清空",IDB_Clear,103,167,52,15
+    EDITTEXT        IDC_EDIT_STRESSNODE_NUM,279,186,19,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_CROSSNODE_NUM,329,184,23,13,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_DISPLACENODE_NUM,377,186,16,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    GROUPBOX        "支架参数",IDC_STATIC,17,28,220,135
+    LTEXT           "纵距x：",IDC_STATIC,30,50,29,8
+    LTEXT           "横距y：",IDC_STATIC,30,68,28,12
+    LTEXT           "步距z：",IDC_STATIC,30,88,29,12
+    LTEXT           "扫地杆高度h2：",IDC_STATIC,29,127,56,12
+    LTEXT           "立杆伸出顶层\n水平杆长度h1:",IDC_STATIC,29,107,57,18
+    GROUPBOX        "荷载参数",IDC_STATIC,245,33,181,158
+    LTEXT           "钢筋混凝土自重G1:",IDC_STATIC,265,51,73,10
+    LTEXT           "模版、支撑梁自重G2:",IDC_STATIC,265,71,75,10
+    LTEXT           "防护设施、附加构件荷载G3：",IDC_STATIC,265,93,61,17
+    LTEXT           "施工人员材料设备荷载P1：",IDC_STATIC,265,118,52,17
+    LTEXT           "浇筑、振捣混凝土荷载P2：",IDC_STATIC,265,142,52,18
+    LTEXT           "风荷载P3：",IDC_STATIC,265,170,52,10
+    GROUPBOX        "阶段设置",IDC_STATIC,21,187,148,128
+    LTEXT           "第一次预压：",IDC_STATIC,31,202,57,10
+    LTEXT           "第二次预压：",IDC_STATIC,31,226,56,10
+    LTEXT           "第三次预压：",IDC_STATIC,31,249,57,10
+    LTEXT           "第一次浇筑：",IDC_STATIC,31,273,56,10
+    LTEXT           "第二次浇筑：",IDC_STATIC,31,297,56,10
+    COMBOBOX        IDXLCD_DanWei_GangJinHunNingTu,135,192,51,56,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDXLCD_DanWei_MoBanFangLeng,135,213,51,55,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDXLCD_DanWei_FuJiaGouJian,135,235,51,57,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDXLCD_DanWei_RenChaiJi,135,257,51,56,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDXLCD_DanWei_JiaoZhuZhenDao,135,279,51,40,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDXLCD_DanWei_FengHeZai,135,303,51,35,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ZhuJu_X,31,0,23,44,CBS_DROPDOWNLIST | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "检查",IDB_test,171,180,42,14,NOT WS_VISIBLE
+    EDITTEXT        IDE_ZhuJuX,7,0,19,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "kN",IDC_STATIC,383,51,9,11
+    LTEXT           "kN",IDC_STATIC,410,72,12,11
+    LTEXT           "kN",IDC_STATIC,410,98,12,11
+    LTEXT           "kN",IDC_STATIC,410,121,12,11
+    LTEXT           "kN",IDC_STATIC,410,145,12,11
+    LTEXT           "kN",IDC_STATIC,410,170,12,11
+    LTEXT           "注:单位(m)",IDC_STATIC,181,149,53,10
+    GROUPBOX        "测点布置参数",IDC_STATIC,180,207,237,93
+    LTEXT           "应力测点数：",IDC_STATIC,253,189,23,8,NOT WS_VISIBLE
+    LTEXT           "    其中\n剪刀撑测点数：",IDC_STATIC,303,182,24,18,NOT WS_VISIBLE
+    LTEXT           "位移测点数：",IDC_STATIC,357,186,17,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_XLSPATH,235,310,189,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "导入路径：",IDC_STATIC,195,311,37,8,NOT WS_VISIBLE
+    PUSHBUTTON      "承载力计算器",IDC_BUTTON_CACLU,166,168,50,14
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",PBS_SMOOTH | PBS_VERTICAL,192,281,216,7
+    PUSHBUTTON      "测试算法",IDC_BUTTON1,372,305,50,14,NOT WS_VISIBLE
+    LTEXT           "下可调拖撑高度：",IDC_STATIC,29,144,61,9
+    EDITTEXT        IDE_GangGuanWaiJing,263,8,8,15,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "钢管外径：",IDC_STATIC,246,10,13,10,NOT WS_VISIBLE
+    EDITTEXT        IDE_GangGuanBiHou,263,24,6,15,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "钢管壁厚：",IDC_STATIC,246,26,9,10,NOT WS_VISIBLE
+    GROUPBOX        "截面标准值",IDC_STATIC,238,0,33,30,NOT WS_VISIBLE
+    EDITTEXT        IDE_BiHouZhi,371,0,6,15,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "壁厚值：",IDC_STATIC,358,1,9,10,NOT WS_VISIBLE
+    EDITTEXT        IDE_BiHouBaiFenBi,371,14,6,15,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "百分比：",IDC_STATIC,358,14,8,10,NOT WS_VISIBLE
+    EDITTEXT        IDE_WaiJingZhi,311,4,6,15,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "外径值：",IDC_STATIC,299,10,8,10,NOT WS_VISIBLE
+    EDITTEXT        IDE_WaiJingBaiFenBi,311,17,6,15,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "百分比：",IDC_STATIC,299,20,10,10,NOT WS_VISIBLE
+    GROUPBOX        "截面误差值",IDC_STATIC,288,0,132,30,NOT WS_VISIBLE
+    PUSHBUTTON      "+",IDC_ADD_WAIJING,323,4,25,12,NOT WS_VISIBLE
+    PUSHBUTTON      "-",IDC_DEL_WAIJING,323,18,24,11,NOT WS_VISIBLE
+    CONTROL         "List2",IDC_LIST_WAIJING_WUCHA,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | NOT WS_VISIBLE | WS_TABSTOP,409,7,19,13
+    CONTROL         "List2",IDC_LIST_BIHOU_WUCHA,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | NOT WS_VISIBLE | WS_TABSTOP,400,20,24,11
+    PUSHBUTTON      "+",IDC_ADD_BIHOU,381,1,25,12,NOT WS_VISIBLE
+    PUSHBUTTON      "-",IDC_DEL_BIHOU,383,16,25,11,NOT WS_VISIBLE
+    PUSHBUTTON      "测试zero",IDC_BTN_TESTZERO,119,0,17,14,NOT WS_VISIBLE
+    GROUPBOX        "节点刚度",IDC_STATIC,155,0,81,25,NOT WS_VISIBLE
+    LTEXT           "横向单元与立杆连接",IDC_STATIC,158,9,41,17,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_HENG_MX,196,9,13,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "Mx",IDC_STATIC,206,0,11,10,NOT WS_VISIBLE
+    LTEXT           "My",IDC_STATIC,227,0,9,9,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_HENG_MY,221,9,11,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "剪刀单元与立杆连接",IDC_STATIC,155,16,41,17,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_TRIM_MX,198,25,10,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_TRIM_MY,221,25,9,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    PUSHBUTTON      "截面定义",IDC_BTN_SECTION,393,43,31,20
+    EDITTEXT        IDC_EDIT_JDMJJ,184,108,38,12,ES_AUTOHSCROLL
+    LTEXT           "剪刀撑面间距:",IDC_STATIC,131,109,52,12
+    EDITTEXT        IDC_EDIT_JDXJJ,184,127,39,12,ES_AUTOHSCROLL
+    LTEXT           "剪刀撑线间距:",IDC_STATIC,130,127,52,12
+END
+
+IDD_DIALOG_SECTION DIALOG 0, 0, 467, 204
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "截面选择"
+FONT 10, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,388,185,36,14
+    PUSHBUTTON      "取消",IDCANCEL,426,164,36,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_RENDER,"Static",SS_BLACKFRAME,0,0,277,203
+    COMBOBOX        IDC_SECTION_CATEGORY,412,149,48,65,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "文字显示",IDC_CHECK_TXT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,414,169,46,10
+    GROUPBOX        "外部轮廓",IDC_STATIC4,296,3,57,139
+    GROUPBOX        "外部轮廓",IDC_STATIC1,296,3,57,97
+    GROUPBOX        "外部轮廓",IDC_STATIC3,296,3,57,130
+    GROUPBOX        "外部轮廓",IDC_STATIC2,296,3,57,113
+    EDITTEXT        IDC_EDIT_H01,320,14,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "H01",IDC_STATIC,304,17,13,8
+    EDITTEXT        IDC_EDIT_H02,320,28,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "H02",IDC_STATIC,304,31,13,8
+    EDITTEXT        IDC_EDIT_H03,320,42,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "H03",IDC_STATIC,304,45,13,8
+    EDITTEXT        IDC_EDIT_B01,320,56,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "B01",IDC_STATIC,304,59,13,8
+    EDITTEXT        IDC_EDIT_B02,320,70,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "B02",IDC_STATIC,304,73,13,8
+    EDITTEXT        IDC_EDIT_B03,320,84,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "B03",IDC_STATIC,304,87,13,8
+    EDITTEXT        IDC_EDIT_B04,320,98,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "B04",IDC_STATICB04,304,101,13,8
+    EDITTEXT        IDC_EDIT_B05,320,112,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "B05",IDC_STATICB05,304,115,13,8
+    EDITTEXT        IDC_EDIT_B06,320,126,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "B06",IDC_STATICB06,304,128,13,8
+    GROUPBOX        "斜角尺寸",IDC_STATIC01,381,3,77,49
+    LTEXT           "1,1",IDC_STATIC011,385,23,13,8
+    LTEXT           "h",IDC_STATIC,409,12,8,8
+    LTEXT           "b",IDC_STATIC,438,12,8,8
+    EDITTEXT        IDC_EDIT_0H11,401,22,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B11,429,22,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "1,2",IDC_STATIC012,385,37,13,8
+    EDITTEXT        IDC_EDIT_0H12,401,36,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B12,429,36,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "2,1",IDC_STATIC021,385,51,13,8
+    EDITTEXT        IDC_EDIT_0H21,401,50,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B21,429,50,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "2,2",IDC_STATIC022,385,65,13,8
+    EDITTEXT        IDC_EDIT_0H22,401,64,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B22,429,64,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "3,1",IDC_STATIC031,385,79,13,8
+    EDITTEXT        IDC_EDIT_0H31,401,78,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B31,429,78,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "3,2",IDC_STATIC032,385,93,13,8
+    EDITTEXT        IDC_EDIT_0H32,401,92,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B32,429,92,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "4,1",IDC_STATIC041,385,107,13,8
+    EDITTEXT        IDC_EDIT_0H41,401,106,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B41,429,106,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "4,2",IDC_STATIC042,385,121,13,8
+    EDITTEXT        IDC_EDIT_0H42,401,120,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_0B42,429,120,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    GROUPBOX        "斜角尺寸",IDC_STATIC02,381,3,77,79
+    GROUPBOX        "斜角尺寸",IDC_STATIC03,381,3,77,106
+    GROUPBOX        "斜角尺寸",IDC_STATIC04,381,3,77,132
+    GROUPBOX        "上下板厚",IDC_STATIC11,296,145,107,29
+    GROUPBOX        "上下板厚",IDC_STATIC12,296,145,107,38
+    EDITTEXT        IDC_EDIT_H11,320,156,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "H11",IDC_STATICH11,302,159,13,8
+    EDITTEXT        IDC_EDIT_H12,371,156,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "H12",IDC_STATICH12,353,158,13,8
+    EDITTEXT        IDC_EDIT_H21,320,169,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "H21",IDC_STATICH21,302,172,13,8
+    EDITTEXT        IDC_EDIT_H22,371,169,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "H22",IDC_STATICH22,353,171,13,8
+    DEFPUSHBUTTON   "自动旋转",ID_BTN_AUTORUN,352,88,36,14,NOT WS_VISIBLE
+    PUSHBUTTON      "停止旋转",ID_BTN_STOP,352,123,36,14,NOT WS_VISIBLE
+    LTEXT           "顺桥向桥长(m)",IDC_STATIC,297,188,50,8
+    EDITTEXT        IDC_EDIT_LENGTH,354,187,26,12,ES_AUTOHSCROLL | NOT WS_BORDER
+    LTEXT           "单位:mm",IDC_STATIC,433,187,28,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "FileDescription", "碗扣式满堂支架建模助手 Microsoft 基础类应用程序"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "碗扣式满堂支架建模助手"
+            VALUE "LegalCopyright", "版权所有 (C) 2015"
+            VALUE "OriginalFilename", "碗扣式满堂支架建模助手.EXE"
+            VALUE "ProductName", "碗扣式满堂支架建模助手 应用程序"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_MY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 492
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 378
+    END
+
+    IDD_Set, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 428
+        VERTGUIDE, 121
+        BOTTOMMARGIN, 338
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_Set DLGINIT
+BEGIN
+    IDC_BuJu_Z, 0x403, 4, 0
+0x2e30, 0x0036, 
+    IDC_BuJu_Z, 0x403, 4, 0
+0x2e30, 0x0039, 
+    IDC_BuJu_Z, 0x403, 4, 0
+0x2e31, 0x0032, 
+    IDXLCD_DanWei_GangJinHunNingTu, 0x403, 3, 0
+0x676b, "\000" 
+    IDXLCD_DanWei_GangJinHunNingTu, 0x403, 2, 0
+0x0074, 
+    IDXLCD_DanWei_GangJinHunNingTu, 0x403, 3, 0
+0x4e6b, "\000" 
+    IDXLCD_DanWei_GangJinHunNingTu, 0x403, 6, 0
+0x2a6d, 0x2a6d, 0x006d, 
+    IDXLCD_DanWei_MoBanFangLeng, 0x403, 3, 0
+0x676b, "\000" 
+    IDXLCD_DanWei_MoBanFangLeng, 0x403, 2, 0
+0x0074, 
+    IDXLCD_DanWei_MoBanFangLeng, 0x403, 3, 0
+0x4e6b, "\000" 
+    IDXLCD_DanWei_MoBanFangLeng, 0x403, 9, 0
+0x4e6b, 0x282f, 0x2a6d, 0x296d, "\000" 
+    IDXLCD_DanWei_FuJiaGouJian, 0x403, 3, 0
+0x676b, "\000" 
+    IDXLCD_DanWei_FuJiaGouJian, 0x403, 2, 0
+0x0074, 
+    IDXLCD_DanWei_FuJiaGouJian, 0x403, 3, 0
+0x4e6b, "\000" 
+    IDXLCD_DanWei_FuJiaGouJian, 0x403, 9, 0
+0x4e6b, 0x282f, 0x2a6d, 0x296d, "\000" 
+    IDXLCD_DanWei_RenChaiJi, 0x403, 3, 0
+0x676b, "\000" 
+    IDXLCD_DanWei_RenChaiJi, 0x403, 2, 0
+0x0074, 
+    IDXLCD_DanWei_RenChaiJi, 0x403, 3, 0
+0x4e6b, "\000" 
+    IDXLCD_DanWei_RenChaiJi, 0x403, 9, 0
+0x4e6b, 0x282f, 0x2a6d, 0x296d, "\000" 
+    IDXLCD_DanWei_JiaoZhuZhenDao, 0x403, 3, 0
+0x4e6b, "\000" 
+    IDXLCD_DanWei_JiaoZhuZhenDao, 0x403, 9, 0
+0x4e6b, 0x282f, 0x2a6d, 0x296d, "\000" 
+    IDXLCD_DanWei_FengHeZai, 0x403, 3, 0
+0x4e6b, "\000" 
+    IDXLCD_DanWei_FengHeZai, 0x403, 9, 0
+0x4e6b, 0x282f, 0x2a6d, 0x296d, "\000" 
+    IDC_ZhuJu_X, 0x403, 4, 0
+0x2e30, 0x0036, 
+    IDC_ZhuJu_X, 0x403, 4, 0
+0x2e30, 0x0039, 
+    IDC_ZhuJu_X, 0x403, 4, 0
+0x2e31, 0x0032, 
+    0
+END
+
+IDD_DIALOG_SECTION DLGINIT
+BEGIN
+    IDC_SECTION_CATEGORY, 0x403, 9, 0
+0xa5b5, 0xe4cf, 0xa5b5, 0xd2ca, "\000" 
+    IDC_SECTION_CATEGORY, 0x403, 9, 0
+0xa5b5, 0xe4cf, 0xabcb, 0xd2ca, "\000" 
+    IDC_SECTION_CATEGORY, 0x403, 9, 0
+0xa5b5, 0xe4cf, 0xfdc8, 0xd2ca, "\000" 
+    IDC_SECTION_CATEGORY, 0x403, 9, 0
+0xa5b5, 0xe4cf, 0xe0b6, 0xd2ca, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BG_WAI              BITMAP                  "res\\bk.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "关于 碗扣式满堂支架建模助手(&A)..."
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\碗扣式满堂支架建模助手.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
