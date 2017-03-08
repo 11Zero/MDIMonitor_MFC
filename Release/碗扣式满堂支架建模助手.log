@@ -1,5 +1,5 @@
-﻿生成启动时间为 2017/3/3 13:27:04。
-     1>项目“D:\C++公用文件夹\My Projects\Bridge\碗扣式满堂支架建模助手.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 2017/3/8 23:07:29。
+     1>项目“D:\C++公用文件夹\My Projects_VS2010\MDIMonitor_MFC\碗扣式满堂支架建模助手.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“.\Release\碗扣式满堂支架建模助手.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
@@ -9,7 +9,7 @@
          所有输出均为最新。
        Link:
          所有输出均为最新。
-         碗扣式满堂支架建模助手.vcxproj -> D:\C++公用文件夹\My Projects\Bridge\.\Release\碗扣式满堂支架建模助手.exe
+         碗扣式满堂支架建模助手.vcxproj -> D:\C++公用文件夹\My Projects_VS2010\MDIMonitor_MFC\.\Release\碗扣式满堂支架建模助手.exe
        Manifest:
          所有输出均为最新。
        BscMake:
@@ -17,8 +17,8 @@
        FinalizeBuildStatus:
          正在删除文件“.\Release\碗扣式满堂支架建模助手.unsuccessfulbuild”。
          正在对“.\Release\碗扣式满堂支架建模助手.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“D:\C++公用文件夹\My Projects\Bridge\碗扣式满堂支架建模助手.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“D:\C++公用文件夹\My Projects_VS2010\MDIMonitor_MFC\碗扣式满堂支架建模助手.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.07
+已用时间 00:00:00.08

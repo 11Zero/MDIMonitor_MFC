@@ -60,6 +60,7 @@ public:
 	//多线程后添加数据
 	double D;//D为标准外径
 	double tw;//tw为标准壁厚
+	double 	FeiYiYuanBanFanWei[2];
 // Dialog Data
 	//{{AFX_DATA(CSet)
 	enum { IDD = IDD_Set };

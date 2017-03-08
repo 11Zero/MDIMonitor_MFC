@@ -1640,6 +1640,8 @@ void CSection::InitDate()
 	BirdgeLength=15.0;
 	m_LastP.x=0;
 	m_LastP.y=0;
+	FeiYiYuanBanFanWei[0] = 0.0;
+	FeiYiYuanBanFanWei[1] = 0.0;
 ////////////////////////////////////////////////////////////////////	
 	///////////////////////OPENGL INIT///////////////////////// 
 
@@ -2041,8 +2043,10 @@ void CSection::OnOK()
 		}break;
 	}
 	CString str = "";
-	str.Format("%.2f",Area/1000000.0*26*BirdgeLength);//混凝土容重按26kN/m3计算
+	str.Format("%.2f",Area/10000.0*26*BirdgeLength);//混凝土容重按26kN/m3计算
 	(pParent->GetDlgItem(IDE_GangJinHunNingTu))->SetWindowText(str);
+	pParent->FeiYiYuanBanFanWei[0]=B01/100.0;
+	pParent->FeiYiYuanBanFanWei[1]=(xLength-B01)/100.0;
 	CDialog::OnOK();
 	//AfxMessageBox(str);
 }

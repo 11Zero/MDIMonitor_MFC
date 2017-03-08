@@ -1,24 +1,45 @@
-﻿生成启动时间为 2017/3/3 0:35:29。
-     1>项目“D:\C++公用文件夹\My Projects\Bridge\碗扣式满堂支架建模助手.vcxproj”在节点 2 上(build 个目标)。
+﻿生成启动时间为 2017/3/8 22:25:08。
+     1>项目“D:\C++公用文件夹\My Projects_VS2010\MDIMonitor_MFC\碗扣式满堂支架建模助手.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“.\Debug\碗扣式满堂支架建模助手.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         所有输出均为最新。
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Set.cpp
+         Set.cpp
+         _WIN32_WINNT not defined. Defaulting to _WIN32_WINNT_MAXVER (see WinSDKVer.h)
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
-         所有输出均为最新。
+         H:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\碗扣式满堂支架建模助手.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\碗扣式满堂支架建模助手.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\C++公用文件夹\My Projects_VS2010\MDIMonitor_MFC\Debug\碗扣式满堂支架建模助手.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\碗扣式满堂支架建模助手.lib" /MACHINE:X86 ".\Debug\碗扣式满堂支架建模助手.res"
+         ".\Debug\碗扣式满堂支架建模助手.exe.embed.manifest.res"
+         .\Debug\DanYuan.obj
+         .\Debug\element.obj
+         .\Debug\excel.obj
+         .\Debug\fline.obj
+         .\Debug\msword.obj
+         .\Debug\Node.obj
+         .\Debug\PaiJu.obj
+         .\Debug\Section.obj
+         .\Debug\Set.obj
+         .\Debug\StdAfx.obj
+         .\Debug\UIThread.obj
+         .\Debug\WordOffice.obj
+         .\Debug\xSkinButton.obj
+         ".\Debug\碗扣式满堂支架建模助手.obj"
+         ".\Debug\碗扣式满堂支架建模助手Dlg.obj"
        Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\碗扣式满堂支架建模助手.exe.embed.manifest" /manifest ".\Debug\碗扣式满堂支架建模助手.exe.intermediate.manifest" "H:\Program Files\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
          所有输出均为最新。
+       LinkEmbedManifest:
          所有输出均为最新。
+         碗扣式满堂支架建模助手.vcxproj -> D:\C++公用文件夹\My Projects_VS2010\MDIMonitor_MFC\.\Debug\碗扣式满堂支架建模助手.exe
        FinalizeBuildStatus:
          正在删除文件“.\Debug\碗扣式满堂支架建模助手.unsuccessfulbuild”。
          正在对“.\Debug\碗扣式满堂支架建模助手.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“D:\C++公用文件夹\My Projects\Bridge\碗扣式满堂支架建模助手.vcxproj”(build 个目标)的操作。
+     1>已完成生成项目“D:\C++公用文件夹\My Projects_VS2010\MDIMonitor_MFC\碗扣式满堂支架建模助手.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.09
+已用时间 00:00:03.23

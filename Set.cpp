@@ -1405,7 +1405,7 @@ void CSet::OnOutput()
 			YZline[i][countline++].ye=maxY;
 		}
 		//int abc=(maxZ-0.3-XiaBuTuoChengGaoDu)/JianDaoXianJianJu;
-		for(j=0;j<(maxZ-0.3-XiaBuTuoChengGaoDu)/JianDaoXianJianJu-1;j++)
+		for(j=0;j<(maxZ-0.3-XiaBuTuoChengGaoDu-JianDaoXianJianJu/3)/JianDaoXianJianJu;j++)
 		{//xz面正向中斜线及其以上斜线
 			YZline[i][countline].ys=0.0;
 			YZline[i][countline].xs=XZVal[1][i];
@@ -1884,6 +1884,11 @@ void CSet::OnOutput()
 				tempres[1]=0.0;
 				if(Zelement[j].ys!=XZVal[0][l])
 					continue;
+				//if(l==0 && i==2 &&fabs(Zelement[j].zs-10.05)<0.005 &&fabs(Zelement[j].xs-0.9)<0.005&& fabs(Zelement[j].ze-10.35)<0.005&&fabs(Zelement[j].xe-0.9)<0.005)
+				//{
+				//	printf("123");
+				//}
+
 				JudgeCross(Zelement[j].xs,Zelement[j].zs,Zelement[j].xe,Zelement[j].ze,
 					XZline[l][i].xs,XZline[l][i].zs,XZline[l][i].xe,XZline[l][i].ze,tempres);
 				if(tempres[0]==-1.0)
@@ -2926,12 +2931,12 @@ void CSet::OnOutput()
 				break;
 			tempcount=1;
 			memset(tempNode,0,sizeof(tempNode)/sizeof(tempNode[0])*sizeof(Node));
-			for(j=1;;j++)
+			for(j=0;;j++)
 			{
 				if(XZNode[l][j].Num==0)
 					break;
 				float res=(XZNode[l][j].x-XZline[l][i].xs)*(XZline[l][i].zs-XZline[l][i].ze)/(XZline[l][i].xs-XZline[l][i].xe)+XZline[l][i].zs-XZNode[l][j].z;
-				if(fabs(res)<0.005&&(XZNode[l][j].z-XZline[l][i].ze)*(XZNode[l][j].z-XZline[l][i].zs)<=0.0)
+				if(fabs(res)<0.005&&(XZNode[l][j].z-XZline[l][i].ze)*(XZNode[l][j].z-XZline[l][i].zs)<=0.005)
 				{
 					tempNode[tempcount++]=XZNode[l][j];
 				}
@@ -2999,12 +3004,12 @@ void CSet::OnOutput()
 				break;
 			tempcount=1;
 			memset(tempNode,0,sizeof(tempNode)/sizeof(tempNode[0])*sizeof(Node));
-			for(j=1;;j++)
+			for(j=0;;j++)
 			{
 				if(YZNode[l][j].Num==0)
 					break;
 				float res=(YZNode[l][j].y-YZline[l][i].ys)*(YZline[l][i].zs-YZline[l][i].ze)/(YZline[l][i].ys-YZline[l][i].ye)+YZline[l][i].zs-YZNode[l][j].z;
-				if(fabs(res)<0.005&&(YZNode[l][j].z-YZline[l][i].ze)*(YZNode[l][j].z-YZline[l][i].zs)<=0.0)
+				if(fabs(res)<0.005&&(YZNode[l][j].z-YZline[l][i].ze)*(YZNode[l][j].z-YZline[l][i].zs)<=0.005)
 				{
 					tempNode[tempcount++]=YZNode[l][j];
 				}
@@ -3072,7 +3077,7 @@ void CSet::OnOutput()
 				break;
 			tempcount=1;
 			memset(tempNode,0,sizeof(tempNode)/sizeof(tempNode[0])*sizeof(Node));
-			for(j=1;;j++)
+			for(j=0;;j++)
 			{
 				//CString str = "";
 				//str.Format("%f,%f,%f",XYNode[l][j].x,XYNode[l][j].y,res);
@@ -3082,7 +3087,7 @@ void CSet::OnOutput()
 					break;
 				float res=(XYNode[l][j].y-XYline[l][i].ys)*(XYline[l][i].xs-XYline[l][i].xe)/(XYline[l][i].ys-XYline[l][i].ye)+XYline[l][i].xs-XYNode[l][j].x;
 				//可能是这里res计算式错误
-				if(fabs(res)<0.005&&((XYNode[l][j].x-XYline[l][i].xe)*(XYNode[l][j].x-XYline[l][i].xs))<=0.0)
+				if(fabs(res)<0.005&&((XYNode[l][j].x-XYline[l][i].xe)*(XYNode[l][j].x-XYline[l][i].xs))<=0.005)
 				{
 					tempNode[tempcount++]=XYNode[l][j];
 				}
@@ -3171,7 +3176,7 @@ void CSet::OnOutput()
 		return;
 	}
 
-	filename1=filename;
+	filename1=filepathname;
 	File1.Open(filename1,CFile::modeCreate|CFile::modeReadWrite);//如果文件事先不存在的话，就需要CFile::modeCreate，否则就不需要。
 	// str=_T("     计算结果如下:         ");
 	// File1.WriteString(str);
@@ -4367,19 +4372,51 @@ void CSet::OnOutput()
 	//	b=PaiJuGeShu_Y-1;
 	//	c=BuJuGeShu_Z-3;
 
-	qy1 = -DiYiCiYuYa * qy / ((PaiJuGeShu_Y-6) * ZhuJuGeShu_X);//选择的对象不存在!!!
+	int matchedNodeCount = 0;
 	for (i=1;; i++)
 	{
 		if (NodeZong[i].Num==0)
 			break;
-		if (fabs(NodeZong[i].z-maxZ)<0.005)
+		if(FeiYiYuanBanFanWei[0]>0.1 &&FeiYiYuanBanFanWei[1]>0.1 )
 		{
-			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy1,0.0,0.0,0.0,"预压第一次");
-			File1.WriteString(str);
-			File1.WriteString("\n");
+			if (fabs(NodeZong[i].z-maxZ)<0.005&&((NodeZong[i].x-FeiYiYuanBanFanWei[0])>-0.005)&&((NodeZong[i].x-FeiYiYuanBanFanWei[1])<0.005))
+			{
+				matchedNodeCount++;
+			}
+		}
+		else
+		{
+			if (fabs(NodeZong[i].z-maxZ)<0.005)
+			{
+				matchedNodeCount++;
+			}
 		}
 	}
-	/*for (yyy = 0 ;yyy<ZhuJuGeShu_X;yyy++)
+	qy1 = -DiYiCiYuYa * qy / matchedNodeCount;//选择的对象不存在!!!
+
+	for (i=1;; i++)
+	{
+		if (NodeZong[i].Num==0)
+			break;
+		if(FeiYiYuanBanFanWei[0]>0.1 &&FeiYiYuanBanFanWei[1]>0.1 )
+		{
+			if (fabs(NodeZong[i].z-maxZ)<0.005&&((NodeZong[i].x-FeiYiYuanBanFanWei[0])>-0.005)&&((NodeZong[i].x-FeiYiYuanBanFanWei[1])<0.005))
+			{
+				str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy1,0.0,0.0,0.0,"预压第一次");
+				File1.WriteString(str);
+				File1.WriteString("\n");
+			}
+		}
+		else
+		{
+			if (fabs(NodeZong[i].z-maxZ)<0.005)
+			{
+				str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy1,0.0,0.0,0.0,"预压第一次");
+				File1.WriteString(str);
+				File1.WriteString("\n");
+			}
+		}
+	}	/*for (yyy = 0 ;yyy<ZhuJuGeShu_X;yyy++)
 	{
 	for (u=(BuJuGeShu_Z-1)*PaiJuGeShu_Y*ZhuJuGeShu_X+4+yyy*PaiJuGeShu_Y;u<=(BuJuGeShu_Z-1)*PaiJuGeShu_Y*ZhuJuGeShu_X-2+(PaiJuGeShu_Y-1)+yyy*PaiJuGeShu_Y;u++)
 	{//u = (c + 2) * dc + 4 + yyy * (b + 1) ;u<= (c + 2) * dc + b - 2 + yyy * (b + 1);u++
@@ -4408,16 +4445,28 @@ void CSet::OnOutput()
 
 
 
-	qy2 = -DiErCiYuYa * qy / ((PaiJuGeShu_Y-6) * ZhuJuGeShu_X);//选择的对象不存在!!!
+	qy2 = -DiErCiYuYa * qy / matchedNodeCount;//选择的对象不存在!!!
 	for (i=1;; i++)
 	{
 		if (NodeZong[i].Num==0)
 			break;
-		if (fabs(NodeZong[i].z-maxZ)<0.005)
+		if(FeiYiYuanBanFanWei[0]>0.1 &&FeiYiYuanBanFanWei[1]>0.1 )
 		{
-			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy2,0.0,0.0,0.0,"预压第二次");
-			File1.WriteString(str);
-			File1.WriteString("\n");
+			if (fabs(NodeZong[i].z-maxZ)<0.005&&((NodeZong[i].x-FeiYiYuanBanFanWei[0])>-0.005)&&((NodeZong[i].x-FeiYiYuanBanFanWei[1])<0.005))
+			{
+				str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy2,0.0,0.0,0.0,"预压第二次");
+				File1.WriteString(str);
+				File1.WriteString("\n");
+			}
+		}
+		else
+		{
+			if (fabs(NodeZong[i].z-maxZ)<0.005)
+			{
+				str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy2,0.0,0.0,0.0,"预压第二次");
+				File1.WriteString(str);
+				File1.WriteString("\n");
+			}
 		}
 	}
 	/*for (yyy = 0 ;yyy<ZhuJuGeShu_X;yyy++)
@@ -4448,16 +4497,28 @@ void CSet::OnOutput()
 	File1.WriteString("\n");
 
 
-	qy3 = -DiSanCiYuYa * qy / ((PaiJuGeShu_Y-6) * ZhuJuGeShu_X);//选择的对象不存在!!!
+	qy3 = -DiSanCiYuYa * qy / matchedNodeCount;//选择的对象不存在!!!
 	for (i=1;; i++)
 	{
 		if (NodeZong[i].Num==0)
 			break;
-		if (fabs(NodeZong[i].z-maxZ)<0.005)
+		if(FeiYiYuanBanFanWei[0]>0.1 &&FeiYiYuanBanFanWei[1]>0.1 )
 		{
-			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy3,0.0,0.0,0.0,"预压第三次");
-			File1.WriteString(str);
-			File1.WriteString("\n");
+			if (fabs(NodeZong[i].z-maxZ)<0.005&&((NodeZong[i].x-FeiYiYuanBanFanWei[0])>-0.005)&&((NodeZong[i].x-FeiYiYuanBanFanWei[1])<0.005))
+			{
+				str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy3,0.0,0.0,0.0,"预压第三次");
+				File1.WriteString(str);
+				File1.WriteString("\n");
+			}
+		}
+		else
+		{
+			if (fabs(NodeZong[i].z-maxZ)<0.005)
+			{
+				str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy3,0.0,0.0,0.0,"预压第三次");
+				File1.WriteString(str);
+				File1.WriteString("\n");
+			}
 		}
 	}
 	/*for (yyy = 0 ;yyy<ZhuJuGeShu_X;yyy++)
@@ -4489,14 +4550,26 @@ void CSet::OnOutput()
 
 
 
-	qj1 = -DiYiCiJiaoZhu * GangJinHunNingTu / ((PaiJuGeShu_Y-6) * ZhuJuGeShu_X);
+	qj1 = -DiYiCiJiaoZhu * GangJinHunNingTu / matchedNodeCount;
 	for (i=1;; i++)
 	{
 		if (NodeZong[i].Num==0)
 			break;
 		if (fabs(NodeZong[i].z-maxZ)<0.005)
 		{
-			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy1,0.0,0.0,0.0,"浇筑第一次-腹板");//此处待添加浇筑第一次-底板
+			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qj1,0.0,0.0,0.0,"浇筑第一次-腹板");//此处待添加浇筑第一次-底板
+			File1.WriteString(str);
+			File1.WriteString("\n");
+		}
+	}
+	qj1 = -DiYiCiJiaoZhu * GangJinHunNingTu / matchedNodeCount;
+	for (i=1;; i++)
+	{
+		if (NodeZong[i].Num==0)
+			break;
+		if (fabs(NodeZong[i].z-maxZ)<0.005)
+		{
+			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qj1,0.0,0.0,0.0,"浇筑第一次-底板");//此处待添加浇筑第一次-底板
 			File1.WriteString(str);
 			File1.WriteString("\n");
 		}
@@ -4538,7 +4611,7 @@ void CSet::OnOutput()
 			break;
 		if (fabs(NodeZong[i].z-maxZ)<0.005)
 		{
-			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qy1,0.0,0.0,0.0,"浇筑第二次");
+			str.Format("%d ,%.2f , %.2f , %.2f , %.2f , %.2f , %.2f , %s",NodeZong[i].Num,0.0,0.0,qj2,0.0,0.0,0.0,"浇筑第二次");
 			File1.WriteString(str);
 			File1.WriteString("\n");
 		}
@@ -4745,7 +4818,7 @@ void CSet::OnOutput()
 	str=_T("   NAME=第二次浇筑, GEN, ACTIVE, 0, 0, , 0, 0");
 	File1.WriteString(str);
 	File1.WriteString("\n");
-	str=_T("        ST, 杆系自重, 1, ST, 第一次浇筑, 1, ST, 第二次浇筑, 1");
+	str=_T("        ST, 杆系自重, 1, ST, 第一次浇筑,1, ST, 第二次浇筑, 1");
 	File1.WriteString(str);
 	File1.WriteString("\n");
 	str=_T("        ST, 浇筑和振捣混凝土, 1, ST, 施工人员、材料、设备, 1");
@@ -6606,6 +6679,8 @@ void CSet::InitVal()
 	BuJuGeShu_Z=0;	// TODO: Add extra initialization here
 	D=0.048;//D为标准外径
 	tw=0.0035;//tw为标准壁厚
+	FeiYiYuanBanFanWei[0]=0.0;
+	FeiYiYuanBanFanWei[1]=0.0;
 	CString tempstr="";
 	tempstr.Format("%.3f",D);
 	((CEdit*)GetDlgItem(IDE_GangGuanWaiJing))->SetWindowText(tempstr);
@@ -6775,15 +6850,17 @@ void CSet::JudgeCross(float x1, float y1, float x2, float y2, float a1, float b1
 	//cross.Num=-1;
 	res[0]=-1.0;
 	res[1]=-1.0;
-	if(((b1-y1)*(x1-x2)-(y1-y2)*(a1-x1))*((b2-y1)*(x1-x2)-(y1-y2)*(a2-x1))<=0&&
-		((y1-b1)*(a1-a2)-(b1-b2)*(x1-a1))*((y2-b1)*(a1-a2)-(b1-b2)*(x2-a1))<=0)
+	float res1 = ((b1-y1)*(x1-x2)-(y1-y2)*(a1-x1))*((b2-y1)*(x1-x2)-(y1-y2)*(a2-x1));
+	float res2 = ((y1-b1)*(a1-a2)-(b1-b2)*(x1-a1))*((y2-b1)*(a1-a2)-(b1-b2)*(x2-a1));
+	if(res1<0.005&&
+		res2<0.005)
 	{
-		if(x1==x2)
+		if(fabs(x1-x2)<0.005)
 		{
 			res[0]=x1;
 			res[1]=(b1-b2)*(x1-a1)/(a1-a2)+b1;
 		}
-		else if(y1==y2)
+		else if(fabs(y1-y2)<0.005)
 		{
 			res[1]=y1;
 			res[0]=a1+(y1-b1)*(a1-a2)/(b1-b2);

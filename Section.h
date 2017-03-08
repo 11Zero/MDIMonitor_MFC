@@ -63,6 +63,7 @@ public:
 	BOOL CharFlag;
 	double ScralSize;
 	int SelectFlag;
+	double  FeiYiYuanBanFanWei[2];
 	/*CString	m_HO1;
 	CString	m_HO2;
 	CString	m_HO3;
